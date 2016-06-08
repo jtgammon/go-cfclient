@@ -13,7 +13,16 @@ type Route struct {
 	Host    string      `json:"host"`
 }
 
+type Domain struct {
+	Name    string      `json:"name"`
+}
+
 type RouteResource struct {
+	Meta   Meta   `json:"metadata"`
+	Entity Domain `json:"entity"`
+}
+
+type DomainResource struct {
 	Meta   Meta  `json:"metadata"`
 	Entity Route `json:"entity"`
 }
@@ -44,6 +53,7 @@ type App struct {
 	State       string		   `json:"State"`
 	Diego       bool		   `json:"diego"`
 	RouteData   []RouteResource        `json:"routes"`
+	DomainData  []DomainResource       `json:"domains"`
 	SpaceData   SpaceResource          `json:"space"`
 	c           *Client
 }

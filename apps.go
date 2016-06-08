@@ -135,14 +135,15 @@ func (c *Client) AppByGuid(guid string) (App, error) {
 		return App{}, fmt.Errorf("Error requesting apps: %v", err)
 	}
 	resBody, err := ioutil.ReadAll(resp.Body)
+	
+	spew.Dump(resBody)
+
+	
 	if err != nil {
 		log.Printf("Error reading app request %v", resBody)
 	}
 
 	err = json.Unmarshal(resBody, &appResource)
-
-	spew.Dump(appResource)
-
 
 	if err != nil {
 		return App{}, fmt.Errorf("Error unmarshaling app: %v", err)

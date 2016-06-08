@@ -53,7 +53,7 @@ type App struct {
 	State       string		   `json:"State"`
 	Diego       bool		   `json:"diego"`
 	RouteData   []RouteResource        `json:"routes"`
-	DomainData  []DomainResource       `json:"domains"`
+	DomainData  DomainResource       `json:"domains"`
 	SpaceData   SpaceResource          `json:"space"`
 	c           *Client
 }

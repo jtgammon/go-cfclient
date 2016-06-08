@@ -10,7 +10,6 @@ import (
 
 
 type Route struct {
-	Guid    string      `json:"guid"`
 	Host    string      `json:"host"`
 	c       *Client
 }

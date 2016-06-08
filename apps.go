@@ -11,6 +11,8 @@ import (
 
 type Route struct {
 	Host    string      `json:"host"`
+	DomainData   DomainResource       `json:"domain"`
+
 }
 
 type Domain struct {

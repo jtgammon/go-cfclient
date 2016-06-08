@@ -140,11 +140,14 @@ func (c *Client) AppByGuid(guid string) (App, error) {
 	}
 
 	err = json.Unmarshal(resBody, &appResource)
+
+	spew.Dump(appResource)
+
+
 	if err != nil {
 		return App{}, fmt.Errorf("Error unmarshaling app: %v", err)
 	}
 	appResource.Entity.Guid = appResource.Meta.Guid
-	spew.Dump(appResource.Meta)
 	appResource.Entity.SpaceData.Entity.Guid = appResource.Entity.SpaceData.Meta.Guid
 	appResource.Entity.SpaceData.Entity.OrgData.Entity.Guid = appResource.Entity.SpaceData.Entity.OrgData.Meta.Guid
 	appResource.Entity.c = c

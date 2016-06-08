@@ -8,6 +8,11 @@ import (
 	"github.com/davecgh/go-spew/spew"
 )
 
+type RouteResource struct {
+	Meta   Meta  `json:"metadata"`
+	Entity Space `json:"entity"`
+}
+
 type AppResponse struct {
 	Count     int           `json:"total_results"`
 	Pages     int           `json:"total_pages"`
@@ -27,7 +32,7 @@ type App struct {
 	SpaceURL    string                 `json:"space_url"`
 	Buildpack   string		   `json:"buildpack"`
 	DetectedBP  string	           `json:"detected_buildpack"`
-	Routes      string                 `json:"routes"`
+	Routes      RouteResource          `json:"routes"`
 	RoutesURL   string                 `json:"routes_url"`
 	SpaceData   SpaceResource          `json:"space"`
 	c           *Client

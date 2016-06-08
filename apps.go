@@ -25,6 +25,8 @@ type App struct {
 	Name        string                 `json:"name"`
 	Environment map[string]interface{} `json:"environment_json"`
 	SpaceURL    string                 `json:"space_url"`
+	Buildpack   string		   `json:"buildpack"`
+	DetectedBP  string	           `json:"detected_buildpack"`
 	SpaceData   SpaceResource          `json:"space"`
 	c           *Client
 }

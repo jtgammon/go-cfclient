@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"io/ioutil"
 	"log"
+	"github.com/davecgh/go-spew/spew"
 )
 
 type AppResponse struct {
@@ -143,6 +144,7 @@ func (c *Client) AppByGuid(guid string) (App, error) {
 		return App{}, fmt.Errorf("Error unmarshaling app: %v", err)
 	}
 	appResource.Entity.Guid = appResource.Meta.Guid
+	spew.Dump(appResource.Meta)
 	appResource.Entity.SpaceData.Entity.Guid = appResource.Entity.SpaceData.Meta.Guid
 	appResource.Entity.SpaceData.Entity.OrgData.Entity.Guid = appResource.Entity.SpaceData.Entity.OrgData.Meta.Guid
 	appResource.Entity.c = c

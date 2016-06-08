@@ -52,6 +52,7 @@ type App struct {
 	Instances   int32		   `json:"instances"`
 	State       string		   `json:"State"`
 	Diego       bool		   `json:"diego"`
+	Environment []string		   `json:"environment_json"`
 	RouteData   []RouteResource        `json:"routes"`
 	SpaceData   SpaceResource          `json:"space"`
 	c           *Client

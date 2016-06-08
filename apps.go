@@ -41,8 +41,8 @@ type App struct {
 	DiskQuota   int32                  `json:"disk_quota"`
 	MemQuota    int32		   `json:"memory"`
 	Instances   int32		   `json:"instances"`
-	State       String		   `json:"State"`
-	Diego       boolean		   `json:"diego"`
+	State       string		   `json:"State"`
+	Diego       bool		   `json:"diego"`
 	RouteData   []RouteResource        `json:"routes"`
 	SpaceData   SpaceResource          `json:"space"`
 	c           *Client

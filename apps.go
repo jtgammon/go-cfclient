@@ -39,6 +39,10 @@ type App struct {
 	DetectedBP  string	           `json:"detected_buildpack"`
 	RoutesURL   string                 `json:"routes_url"`
 	DiskQuota   int32                  `json:"disk_quota"`
+	MemQuota    int32		   `json:"memory"`
+	Instances   int32		   `json:"instances"`
+	State       String		   `json:"State"`
+	Diego       boolean		   `json:"diego"`
 	RouteData   []RouteResource        `json:"routes"`
 	SpaceData   SpaceResource          `json:"space"`
 	c           *Client

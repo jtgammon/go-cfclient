@@ -27,6 +27,7 @@ type App struct {
 	SpaceURL    string                 `json:"space_url"`
 	Buildpack   string		   `json:"buildpack"`
 	DetectedBP  string	           `json:"detected_buildpack"`
+	Routes      string                 `json:"routes"`
 	SpaceData   SpaceResource          `json:"space"`
 	c           *Client
 }

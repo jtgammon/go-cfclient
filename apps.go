@@ -19,12 +19,12 @@ type Domain struct {
 
 type RouteResource struct {
 	Meta   Meta   `json:"metadata"`
-	Entity Domain `json:"entity"`
+	Entity Route  `json:"entity"`
 }
 
 type DomainResource struct {
-	Meta   Meta  `json:"metadata"`
-	Entity Route `json:"entity"`
+	Meta   Meta   `json:"metadata"`
+	Entity Domain `json:"entity"`
 }
 
 type AppResponse struct {

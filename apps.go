@@ -8,9 +8,16 @@ import (
 	"github.com/davecgh/go-spew/spew"
 )
 
+
+type Route struct {
+	Guid    string      `json:"guid"`
+	Host    string      `json:"host"`
+	c       *Client
+}
+
 type RouteResource struct {
 	Meta   Meta  `json:"metadata"`
-	Entity Space `json:"entity"`
+	Entity Route `json:"entity"`
 }
 
 type AppResponse struct {

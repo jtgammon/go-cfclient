@@ -23,6 +23,7 @@ type Space struct {
 	Name    string      `json:"name"`
 	OrgURL  string      `json:"organization_url"`
 	OrgData OrgResource `json:"organization"`
+	DomainData  []DomainResource       `json:"domains"`
 	c       *Client
 }
 

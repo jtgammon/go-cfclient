@@ -38,7 +38,7 @@ type App struct {
 	Buildpack   string		   `json:"buildpack"`
 	DetectedBP  string	           `json:"detected_buildpack"`
 	RoutesURL   string                 `json:"routes_url"`
-	RouteData   RouteResource          `json:"routes"`
+	RouteData   []RouteResource        `json:"routes"`
 	SpaceData   SpaceResource          `json:"space"`
 	c           *Client
 }

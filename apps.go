@@ -11,7 +11,6 @@ import (
 
 type Route struct {
 	Host    string      `json:"host"`
-	c       *Client
 }
 
 type RouteResource struct {

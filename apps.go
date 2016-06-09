@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"io/ioutil"
 	"log"
-	"github.com/davecgh/go-spew/spew"
+//	"github.com/davecgh/go-spew/spew"
 )
 
 
@@ -174,7 +174,7 @@ func (c *Client) AppByGuid(guid string) (App, error) {
 
 	err = json.Unmarshal(resBody, &appResource)
 
-        spew.Dump(appResource)
+//        spew.Dump(appResource)
 
 	if err != nil {
 		return App{}, fmt.Errorf("Error unmarshaling app: %v", err)

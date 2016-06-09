@@ -61,6 +61,7 @@ type App struct {
 
 type AppInstance struct {
 	State string `json:"state"`
+	Uptime int32 `json:"uptime"`
 }
 
 func (a *App) Space() (Space, error) {

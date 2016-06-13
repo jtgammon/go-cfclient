@@ -27,7 +27,7 @@ type UserResource struct {
 	Entity User  `json:"entity"`
 }
 
-func (c *Client) UsersBySpace(guid string) ([]User, error) {
+func (c *Client) UsersByOrganization(guid string) ([]User, error) {
 	var users []User
 	var userResponse UserResponse
 	r := c.NewRequest("GET", "/v2/organizations/"+guid+"/user_roles?order-direction=asc")

@@ -12,6 +12,7 @@ type User struct {
 	DefaultSpaceGuid 	string	`json:"default_space_guid"`
 	Username    		string	`json:"username"`
 	OrganizationRoles   	[]string	`json:"organization_roles"`
+	SpaceRoles   	[]string	`json:"space_roles"`
 	c          		*Client
 }
 
@@ -27,10 +28,10 @@ type UserResource struct {
 	Entity User  `json:"entity"`
 }
 
-func (c *Client) UsersByOrganization(guid string) ([]User, error) {
+func (c *Client) UsersBy(guid string, entity string) ([]User, error) {
 	var users []User
 	var userResponse UserResponse
-	r := c.NewRequest("GET", "/v2/organizations/"+guid+"/user_roles?order-direction=asc")
+	r := c.NewRequest("GET", "/v2/" + entity + "/" + guid + "/user_roles?order-direction=asc")
 
 	resp, err := c.DoRequest(r)
 	if err != nil {

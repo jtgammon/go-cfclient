@@ -26,6 +26,10 @@ type Space struct {
 	c       *Client
 }
 
+func (c *Client) SpaceOrg(space Space) (Org, error) {
+	return space.Org()
+}
+
 func (s *Space) Org() (Org, error) {
 	var orgResource OrgResource
 	r := s.c.NewRequest("GET", s.OrgURL)

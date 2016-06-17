@@ -65,6 +65,10 @@ type AppInstance struct {
 	Since int32 `json:"since"`
 }
 
+func (c *Client) AppSpace(app App) (Space, error) {
+	return app.Space()
+}
+
 func (a *App) Space() (Space, error) {
 	var spaceResource SpaceResource
 	r := a.c.NewRequest("GET", a.SpaceURL)
